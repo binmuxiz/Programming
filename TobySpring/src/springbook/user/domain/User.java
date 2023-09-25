@@ -39,7 +39,7 @@ public class User {
         UserDao userDao = new UserDao();
 
         User user = new User();
-        user.setId("root");
+        user.setId("newId");
         user.setPassword("0881");
         user.setName("이은빈");
 
