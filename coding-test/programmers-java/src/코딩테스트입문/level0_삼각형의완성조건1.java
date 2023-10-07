@@ -29,7 +29,7 @@ public class level0_삼각형의완성조건1 {
 
     // TODO 가장 긴 변을 찾을 필요 없이 삼각형은 한 변의 길이가 다른 두 변의 길이의 합보다 작다.
     public int solution3(int[] sides) {
-        
+
         int A = sides[0] + sides[1];
         int B = sides[1] + sides[2];
         int C = sides[2] + sides[0];

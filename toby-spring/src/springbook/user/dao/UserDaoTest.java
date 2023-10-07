@@ -13,9 +13,14 @@ public class UserDaoTest {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-        // UserDao가 사용할 ConnectionMaker 구현 클래스를 결정하고 오브젝트를 생성하여 전달한다.
-        // 결국 두 오브젝트(UserDao와 DConnectionMaker)의 의존관계 설정 (런타임 오브젝트 의존관계)
-        UserDao userDao = new UserDao(new DConnectionMaker());
+        /**
+         * 기존에 UserDaoTest가 테스트하는 책임 외에
+         * 어떤 ConnectionMaker를 사용할지 결정하는 책임도 맡고 있었다.
+         * 분리하자!.!
+         * UserDao와 ConnectionMaker 구현 클래스의 오브젝트를 만들고, 두 객체을 연결시키는 작업을
+         * Factory가 수행하도록 하였다.
+         */
+        UserDao userDao = new DaoFactory().userDao();
 
         User user = new User();
         user.setId("id");
