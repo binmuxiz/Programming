@@ -12,9 +12,24 @@ public class DaoFactory {
     public UserDao userDao() {
         // UserDao가 사용할 ConnectionMaker 구현 클래스를 결정하고 오브젝트를 생성하여 전달한다.
         // 결국 두 오브젝트(UserDao와 DConnectionMaker)의 의존관계 설정 (런타임 오브젝트 의존관계)
-
-        DConnectionMaker connectionMaker = new DConnectionMaker();
-        UserDao userDao = new UserDao(connectionMaker);
-        return userDao;
+        return new UserDao(connectionMaker());
     }
+
+    // 다른 Dao 클래스를 생성하는 메소드도 만들어보자
+    public AccountDao accountDao() {
+        return new AccountDao(connectionMaker());
+    }
+
+    public MessageDao messageDao() {
+        return new MessageDao(connectionMaker());
+    }
+
+    /**
+     *   new DConnectionMaker() 코드의 중복 제거 
+     *   다른 ConnectionMaker로 변경하더라도 코드의 변경이 용이.
+     */
+    public ConnectionMaker connectionMaker() {
+        return new DConnectionMaker();
+    }
+
 }
