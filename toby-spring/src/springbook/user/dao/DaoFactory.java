@@ -25,7 +25,7 @@ public class DaoFactory {
     }
 
     /**
-     *   new DConnectionMaker() 코드의 중복 제거 
+     *   new DConnectionMaker() 코드의 중복 제거
      *   다른 ConnectionMaker로 변경하더라도 코드의 변경이 용이.
      */
     public ConnectionMaker connectionMaker() {
