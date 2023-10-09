@@ -1,5 +1,7 @@
 package springbook.user.dao;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import springbook.user.dao.UserDao;
 import springbook.user.domain.User;
 
@@ -13,6 +15,9 @@ public class UserDaoTest {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
+        ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
+        UserDao userDao = context.getBean("userDao", UserDao.class);
+
         /**
          * 기존에 UserDaoTest가 테스트하는 책임 외에
          * 어떤 ConnectionMaker를 사용할지 결정하는 책임도 맡고 있었다.
@@ -20,7 +25,7 @@ public class UserDaoTest {
          * UserDao와 ConnectionMaker 구현 클래스의 오브젝트를 만들고, 두 객체을 연결시키는 작업을
          * Factory가 수행하도록 하였다.
          */
-        UserDao userDao = new DaoFactory().userDao();
+//        UserDao userDao = new DaoFactory().userDao();
 
         User user = new User();
         user.setId("id");
