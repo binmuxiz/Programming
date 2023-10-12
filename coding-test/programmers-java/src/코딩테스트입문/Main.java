@@ -17,10 +17,15 @@ public class Main {
 //        level0_겹치는선분의길이 p3 = new level0_겹치는선분의길이();
 //        System.out.println(p3.solution(arr));
 
-        level0_연속된수의합 p4 = new level0_연속된수의합();
-        int[] results = p4.solution(4, 14);
-        for (int i : results) {
-            System.out.print(i);
-        }
+//        level0_연속된수의합 p4 = new level0_연속된수의합();
+//        int[] results = p4.solution(4, 14);
+//        for (int i : results) {
+//            System.out.print(i);
+//        }
+
+        level0_분수의덧셈 p5 = new level0_분수의덧셈();
+        int[] results = p5.solution2(1, 2, 3, 4);
+        System.out.println(results[0] + ", " + results[1]);
+
     }
 }
