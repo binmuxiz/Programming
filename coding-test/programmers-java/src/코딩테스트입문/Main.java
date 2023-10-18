@@ -1,5 +1,7 @@
 package 코딩테스트입문;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -23,9 +25,11 @@ public class Main {
 //            System.out.print(i);
 //        }
 
-        level0_분수의덧셈 p5 = new level0_분수의덧셈();
-        int[] results = p5.solution2(1, 2, 3, 4);
-        System.out.println(results[0] + ", " + results[1]);
+//        level0_분수의덧셈 p5 = new level0_분수의덧셈();
+//        int[] results = p5.solution2(1, 2, 3, 4);
+//        System.out.println(results[0] + ", " + results[1]);
 
+        level0_최빈값구하기 p6 = new level0_최빈값구하기();
+        System.out.println(p6.solution(new int[]{1, 2, 3, 3, 3, 4}));
     }
 }
