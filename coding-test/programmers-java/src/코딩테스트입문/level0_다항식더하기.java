@@ -2,7 +2,6 @@ package 코딩테스트입문;
 
 public class level0_다항식더하기 {
     public String solution(String polynomial) {
-        String answer = "";
 
         String[] arr = polynomial.split(" ");
 
@@ -18,9 +17,17 @@ public class level0_다항식더하기 {
                 b += Integer.parseInt(arr[i]);
             }
         }
-        if (a == 0) answer = String.valueOf(b);
-        else if (b == 0) answer = String.valueOf(a) + "x";
-        else answer = String.valueOf(a) + "x + " + String.valueOf(b);
-        return answer;
+
+        StringBuffer sb = new StringBuffer();
+
+        if (a != 0) {
+            if (a == 1) sb.append("x");
+            else sb.append(a + "x");
+
+            if (b != 0) sb.append(" + " + b);
+        } else {
+            sb.append(b);
+        }
+        return sb.toString();
     }
 }

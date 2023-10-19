@@ -33,7 +33,7 @@ public class Main {
 //        System.out.println(p6.solution(new int[]{1, 2, 3, 3, 3, 4}));
 
         level0_다항식더하기 p7 = new level0_다항식더하기();
-        System.out.println(p7.solution("3x + 7 + x"));
+        System.out.println(p7.solution("2 + 1 + x"));
 
 
     }
