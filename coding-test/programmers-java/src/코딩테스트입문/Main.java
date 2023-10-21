@@ -32,8 +32,14 @@ public class Main {
 //        level0_최빈값구하기 p6 = new level0_최빈값구하기();
 //        System.out.println(p6.solution(new int[]{1, 2, 3, 3, 3, 4}));
 
-        level0_다항식더하기 p7 = new level0_다항식더하기();
-        System.out.println(p7.solution("2 + 1 + x"));
+//        level0_다항식더하기 p7 = new level0_다항식더하기();
+//        System.out.println(p7.solution("2 + 1 + x"));
+
+        level0_특이한정렬 p8 = new level0_특이한정렬();
+        int[] solution = p8.solution(new int[]{10,2}, 6);
+        for (int e : solution) {
+            System.out.println(e);
+        }
 
 
     }
