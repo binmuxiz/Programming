@@ -15,4 +15,8 @@ public class level0_문자열밀기 {
         }
         return answer;
     }
+
+    public int solution2(String A, String B) {
+        return (B + B).indexOf(A);
+    }
 }
