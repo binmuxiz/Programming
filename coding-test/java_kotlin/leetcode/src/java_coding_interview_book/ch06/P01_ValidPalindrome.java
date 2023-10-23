@@ -1,8 +1,13 @@
-package java_coding_interview_book;
+package java_coding_interview_book.ch06;
 
+// https://leetcode.com/problems/valid-palindrome/
 public class P01_ValidPalindrome {
 
-    public static boolean isPalindrome(String s) {
+    public static void main(String[] args) {
+        System.out.println(solution1("1    "));
+    }
+
+    public static boolean solution1(String s) {
 
         boolean answer = true;
         int start = 0;
@@ -24,11 +29,14 @@ public class P01_ValidPalindrome {
             start++;
             end--;
         }
-
         return answer;
     }
 
-    public static void main(String[] args) {
-        System.out.println(isPalindrome("1    "));
+    public static boolean solution2(String s) {
+
+        String filteredStr = s.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
+        String reversedStr = new StringBuilder(filteredStr).reverse().toString();
+        return filteredStr.equals(reversedStr);
     }
+
 }
