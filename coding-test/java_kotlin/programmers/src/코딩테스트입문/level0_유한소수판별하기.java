@@ -45,6 +45,6 @@ public class level0_유한소수판별하기 {
     private int gcd(int a, int b) {
         if (b == 0) return a; // b -> 나머지, a -> 나누는 수
 
-        return gcd(b, a % b); 
+        return gcd(b, a % b);
     }
 }
