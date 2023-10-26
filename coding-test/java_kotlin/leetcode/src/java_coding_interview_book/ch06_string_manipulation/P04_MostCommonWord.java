@@ -1,7 +1,6 @@
-package java_coding_interview_book.ch06;
+package java_coding_interview_book.ch06_string_manipulation;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class P04_MostCommonWord {
 

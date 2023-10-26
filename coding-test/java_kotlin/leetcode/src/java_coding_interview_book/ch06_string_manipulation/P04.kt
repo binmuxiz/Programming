@@ -1,4 +1,4 @@
-package java_coding_interview_book.ch06
+package java_coding_interview_book.ch06_string_manipulation
 
 class P04 {
 

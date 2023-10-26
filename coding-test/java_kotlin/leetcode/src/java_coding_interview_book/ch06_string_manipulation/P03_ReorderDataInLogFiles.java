@@ -1,8 +1,6 @@
-package java_coding_interview_book.ch06;
+package java_coding_interview_book.ch06_string_manipulation;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class P03_ReorderDataInLogFiles {

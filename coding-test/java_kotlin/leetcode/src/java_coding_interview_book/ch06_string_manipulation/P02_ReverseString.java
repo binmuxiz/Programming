@@ -1,4 +1,4 @@
-package java_coding_interview_book.ch06;
+package java_coding_interview_book.ch06_string_manipulation;
 
 // https://leetcode.com/problems/reverse-string/
 public class P02_ReverseString {
