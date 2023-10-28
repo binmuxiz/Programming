@@ -1,4 +1,4 @@
-package string_manipulation;
+package palindrome;
 
 // https://leetcode.com/problems/valid-palindrome-ii/
 public class P680_ValidPalindrome2 {
