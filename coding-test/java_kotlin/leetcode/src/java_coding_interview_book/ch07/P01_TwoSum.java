@@ -1,5 +1,8 @@
 package java_coding_interview_book.ch07;
 
+import java.util.HashMap;
+import java.util.Map;
+
 //https://leetcode.com/problems/two-sum/
 public class P01_TwoSum {
 
@@ -45,5 +48,52 @@ public class P01_TwoSum {
         return null;
     }
 
-    
+    // 3ms
+    public static int[] solution3(int[] nums, int target) {
+
+        Map<Integer, Integer> keys = new HashMap<>();
+
+        // nums의 값이 key, 인덱스가 value인 map
+        for (int i = 0; i < nums.length; i++) {
+            keys.put(nums[i], i);
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            int j = target - nums[i];
+            // target에서 nums의 값을 뺀 값이 map에 존재하고 그 값이 현재 인덱스가 아니면 정답 리턴
+            if (keys.containsKey(j) && keys.get(j) != i) {
+                return new int[]{i, keys.get(j)};
+            }
+
+        }
+        return null;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
