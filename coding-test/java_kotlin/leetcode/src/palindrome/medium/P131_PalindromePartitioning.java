@@ -20,7 +20,7 @@ public class P131_PalindromePartitioning {
                     list.add(subStr);
                 }
             }
-            output.add(list);
+//            output.add(list);
         }
 
     }
