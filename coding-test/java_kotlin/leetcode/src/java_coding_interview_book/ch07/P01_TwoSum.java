@@ -49,22 +49,41 @@ public class P01_TwoSum {
     }
 
     // 3ms
+    // 시간복잡도 O(N)
     public static int[] solution3(int[] nums, int target) {
 
-        Map<Integer, Integer> keys = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
-        // nums의 값이 key, 인덱스가 value인 map
+        // map에 nums의 값을 key, 인덱스를 value로 저장
         for (int i = 0; i < nums.length; i++) {
-            keys.put(nums[i], i);
+            map.put(nums[i], i);
         }
+
+        // target에서 nums의 값을 뺀 값이 key 중 존재하고 그 값이 현재 인덱스가 아니면 정답 리턴
+        for (int i = 0; i < nums.length; i++) {
+            int j = target - nums[i];
+            if (map.containsKey(j) && map.get(j) != i) {
+                return new int[]{i, map.get(j)};
+            }
+
+        }
+        return null;
+    }
+
+    // 2ms
+    // 시간복잡도 O(N)
+    public static int[] solution4(int[] nums, int target) {
+
+        // nums의 값을 key, 인덱스를 value로 가지는 Map
+        Map<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
             int j = target - nums[i];
-            // target에서 nums의 값을 뺀 값이 map에 존재하고 그 값이 현재 인덱스가 아니면 정답 리턴
-            if (keys.containsKey(j) && keys.get(j) != i) {
-                return new int[]{i, keys.get(j)};
-            }
-
+            // map에 target에서 nums의 값을 뺀 값이 map에 존재하면 인덱스와, map에서 찾은 값 리턴
+            if (map.containsKey(j))
+                return new int[]{map.get(j), i}; // 맵에 들어있는 값이 현재보다 항상 작기 때문에 위의 풀이와 다르게 순서를 바꿔 리
+            // 없으면 map에 저장
+            map.put(nums[i], i);
         }
         return null;
     }
