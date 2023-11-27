@@ -1,6 +1,6 @@
 package hash_table;// 해시 충돌 해결 - 분리 연결법
 
-public class SeperateChaining {
+public class SeparateChaining {
     public static void main(String[] args) {
         MyHashTable5 ht = new MyHashTable5(11);
         ht.setValue(1, 10);

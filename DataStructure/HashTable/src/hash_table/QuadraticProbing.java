@@ -1,12 +1,13 @@
 package hash_table;
 
-// 해시 충돌 해결 - 개방 주소법 (선형 탐사법)
-class MyHashTable2 extends MyHashTable {
+// 해시 충돌 해결 - 개방 주소법 (제곱 탐사법)
+class MyHashTable3 extends MyHashTable {
 
-    MyHashTable2(int length) {
+    MyHashTable3(int length) {
         super(length);
     }
 
+    @Override
     public void setValue(int key, int value) {
         int idx = this.getHash(key);
 
@@ -15,10 +16,10 @@ class MyHashTable2 extends MyHashTable {
             return;
         } else if (this.table[idx] == null) {
             this.table[idx] = value;
-        } else { // 충돌
+        } else {
             int newIdx = idx;
-            while (true) {
-                newIdx = (newIdx + 1) % this.table.length;
+            for (int i = 0; ; i++) {
+                newIdx = (newIdx + (int)Math.pow(2, i)) % this.table.length;
                 if (this.table[newIdx] == null)
                     break;
             }
@@ -28,21 +29,22 @@ class MyHashTable2 extends MyHashTable {
     }
 }
 
-
-public class LinearProving {
+public class QuadraticProbing {
 
     public static void main(String[] args) {
-        MyHashTable2 ht = new MyHashTable2(5);
-        ht.setValue(1, 1);
-        ht.setValue(3, 3);
-        ht.printHashTable();
 
+        MyHashTable3 ht = new MyHashTable3(11);
         ht.setValue(1, 10);
+        ht.setValue(2, 20);
+        ht.setValue(4, 40);
         ht.printHashTable();
 
-        ht.setValue(1, 20);
-        ht.setValue(1, 30);
-        ht.setValue(1, 40);
+        ht.setValue(1, 100);
+        ht.printHashTable();
+
+        ht.setValue(1, 200);
+        ht.setValue(1, 300);
+        ht.setValue(1, 400);
         ht.printHashTable();
     }
 }
