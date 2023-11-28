@@ -1,4 +1,4 @@
-package hash_table;
+package zero_base;
 
 // 해시 충돌 해결 - 개방 주소법 (제곱 탐사법)
 class MyHashTable3 extends MyHashTable {

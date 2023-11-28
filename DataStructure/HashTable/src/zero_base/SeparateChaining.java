@@ -1,4 +1,4 @@
-package hash_table;// 해시 충돌 해결 - 분리 연결법
+package zero_base;// 해시 충돌 해결 - 분리 연결법
 
 public class SeparateChaining {
     public static void main(String[] args) {

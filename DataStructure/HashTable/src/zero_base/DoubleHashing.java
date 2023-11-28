@@ -1,4 +1,4 @@
-package hash_table;// 해시 충돌 해결 - 개방 주소법 (이중 해싱)
+package zero_base;// 해시 충돌 해결 - 개방 주소법 (이중 해싱)
 
 class MyHashTable4 extends MyHashTable {
     int c;

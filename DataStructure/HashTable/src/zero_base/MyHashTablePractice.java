@@ -1,4 +1,4 @@
-package hash_table;
+package zero_base;
 
 class MyHashTable {
     Integer[] table;

@@ -1,4 +1,4 @@
-package hash_table;// 참고 - HashTable? HashMap?
+package zero_base;// 참고 - HashTable? HashMap?
 
 import java.util.HashMap;
 import java.util.Hashtable;

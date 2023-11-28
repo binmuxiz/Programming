@@ -1,4 +1,4 @@
-package practice;
+package zero_base.practice;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -21,12 +21,12 @@ public class DFS_recursive {
 
     }
 
-    private static List<Integer> recursiveDFS(int edge, List<Integer> discovered) {
+    private static List<Integer> recursiveDFS(int v, List<Integer> discovered) {
         // 현재 노드 저장 (전위 순회 : 루트->왼쪽자식->오른쪽자식)
-        discovered.add(edge);
+        discovered.add(v);
 
         // 현재 노드의 인접 노드를 탐색
-        for (Integer w : graph.get(edge)) {
+        for (Integer w : graph.get(v)) {
             // 아직 처리되지 않은 노드라면 깊이 기반 탐색 진행
             if (!discovered.contains(w)) {
                 discovered = recursiveDFS(w, discovered);

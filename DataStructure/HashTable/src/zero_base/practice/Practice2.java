@@ -1,4 +1,4 @@
-package practice;
+package zero_base.practice;
 
 import java.util.*;
 import java.util.stream.Stream;
