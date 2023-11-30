@@ -31,6 +31,7 @@ public class P04_Combinations {
             dfs(result, elements, n, k - 1, i + 1);
 //            elements.remove(i); // 이건 remove(int index) 임.. -> IndexOutOfBoundsException 발생함
             elements.remove(elements.size() - 1);
+
         }
     }
 }
