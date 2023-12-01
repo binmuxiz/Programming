@@ -19,6 +19,7 @@ public class P05_Combination_Sum {
     }
 
     public void dfs(List<List<Integer>> result,  Deque<Integer> path, int target, int[] candidates, int idx) {
+        // 목표값에 도달하여 결과를 추가하고 리턴
         if (target == 0) {
             result.add(new ArrayList<>(path));
             return;
