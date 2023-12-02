@@ -1,4 +1,4 @@
-package java_coding_interview_book.ch07;
+package java_coding_interview_book.ch07_array;
 
 import java.util.HashMap;
 import java.util.Map;

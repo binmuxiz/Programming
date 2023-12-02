@@ -1,4 +1,4 @@
-package java_coding_interview_book.ch07
+package java_coding_interview_book.ch07_array
 
 class P01 {
 
