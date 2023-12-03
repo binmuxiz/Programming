@@ -1,10 +1,9 @@
-package ch10_lambda_and_stream;
+package lamda_and_stream;
 
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 // 특정 수를 입력 받고 해당 숫자보다 작거나 같은 모든 소수를 list로 만드는 스트림 작성
 // 조건 : 반환된 스트림을 print문으로 출력

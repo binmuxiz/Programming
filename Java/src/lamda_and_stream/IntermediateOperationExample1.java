@@ -1,4 +1,4 @@
-package ch10_lambda_and_stream;
+package lamda_and_stream;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;

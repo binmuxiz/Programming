@@ -1,4 +1,4 @@
-package ch10_lambda_and_stream;
+package lamda_and_stream;
 
 // 특정 수를 입력받아 해당 수의 제곱과 루트를 구하는 람다 표현식을 작성하세요.
 // 조건 : Interface 정의, 하나의 표현식으로 두 가지 기능 구현
