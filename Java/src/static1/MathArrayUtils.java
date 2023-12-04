@@ -1,8 +1,11 @@
 package static1;
 
+import java.util.LinkedList;
+
 public class MathArrayUtils {
 
-    private MathArrayUtils() {}
+    private MathArrayUtils() {
+    }
 
     public static int sum(int[] array) {
         int sum = 0;
@@ -31,5 +34,6 @@ public class MathArrayUtils {
         }
         return maxVal;
     }
+
 }
 
