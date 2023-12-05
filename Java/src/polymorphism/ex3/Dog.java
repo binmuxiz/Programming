@@ -1,6 +1,6 @@
 package polymorphism.ex3;
 
-public class Dog extends Animal {
+public class Dog extends AbstractAnimal {
 
     @Override
     public void sound() {
