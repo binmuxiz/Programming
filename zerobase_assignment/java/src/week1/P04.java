@@ -58,16 +58,39 @@ class ResidentRegistrationNumber {
 
     private ResidentRegistrationNumber() {}
 
-    private static class GENDER {
-        static final short MALE  = 3;
-        static final short FEMALE = 4;
-    }
+
 
     public static String getSSN(int year, int month, int day, char gender) {
         String prefix = getPrefix(year, month, day, gender);
         return prefix + getRandomSuffix(prefix);
     }
 
+    public static boolean isValidDate(int year, int month, int day) {
+        if (!(2020 <= year && year <= 2999)) return false;
+        if (!(1 <= month && month <= 12)) return false;
+        if (!(1 <= day && day <= 31)) return false;
+
+        if (isLeapYear(year) && month == 2) {
+            if (day > 29) return false;
+        }
+
+        switch (month) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12 :
+                if (day > 31) return false;
+
+            case 4: case 6: case 9: case 11:
+                if (day > 30) return false;
+
+            case 2 :
+                if (day > 28) return false;
+        }
+        return true;
+    }
+
+    public static boolean isValidGender(char gender) {
+        return (gender == 'm' || gender == 'M' || gender == 'f' || gender == 'F');
+    }
+    
     private static String getPrefix(int year, int month, int day, char gender) {
         String prefix = "";
 
@@ -115,33 +138,14 @@ class ResidentRegistrationNumber {
         return str.toString();
     }
 
-    public static boolean isValidDate(int year, int month, int day) {
-        if (!(2020 <= year && year <= 2999)) return false;
-        if (!(1 <= month && month <= 12)) return false;
-        if (!(1 <= day && day <= 31)) return false;
-
-        if (isLeapYear(year) && month == 2) {
-            if (day > 29) return false;
-        }
-
-        switch (month) {
-            case 1: case 3: case 5: case 7: case 8: case 10: case 12 :
-                if (day > 31) return false;
-
-            case 4: case 6: case 9: case 11:
-                if (day > 30) return false;
-
-            case 2 :
-                if (day > 28) return false;
-        }
-        return true;
-    }
     private static boolean isLeapYear(int year) {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
-    public static boolean isValidGender(char gender) {
-        return (gender == 'm' || gender == 'M' || gender == 'f' || gender == 'F');
+    private static class GENDER {
+        static final short MALE  = 3;
+        static final short FEMALE = 4;
     }
+
 }
 
