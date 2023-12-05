@@ -90,7 +90,7 @@ class ResidentRegistrationNumber {
     public static boolean isValidGender(char gender) {
         return (gender == 'm' || gender == 'M' || gender == 'f' || gender == 'F');
     }
-    
+
     private static String getPrefix(int year, int month, int day, char gender) {
         String prefix = "";
 
