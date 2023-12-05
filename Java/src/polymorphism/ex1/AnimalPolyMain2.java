@@ -3,7 +3,7 @@ package polymorphism.ex1;
 public class AnimalPolyMain2 {
     public static void main(String[] args) {
 
-        Animal[] animals = {new Dog(), new Cat(), new Caw()};
+        Animal[] animals = {new Dog(), new Cat(), new Caw(), new Pig()};
 
         for (Animal animal : animals) {
             sound(animal);

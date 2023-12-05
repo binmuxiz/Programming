@@ -3,6 +3,6 @@ package polymorphism.ex1;
 public class Animal {
 
     public void sound() {
-        System.out.println("동물 울음 소기");
+        System.out.println("동물 울음 소리");
     }
 }
