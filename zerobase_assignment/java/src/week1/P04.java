@@ -17,16 +17,16 @@ public class P04 {
                 System.out.println("[주민등록번호 계산]");
 
                 System.out.print("출생년도를 입력해 주세요.(yyyy): ");
-                year = sc.nextInt();
+                year = sc.nextInt();  // 2020년 이후만 입력 가능
 
-                System.out.print("출생월을 입력해 주세요.(mm): ");
+                System.out.print("출생월을 입력해 주세요.(MM): ");
                 month = sc.nextInt();
 
                 System.out.print("출생일을 입력해 주세요.(dd): ");
                 day = sc.nextInt();
 
                 if (!ResidentRegistrationNumber.isValidDate(year, month, day))
-                    throw new InputMismatchException();
+                    throw new InputMismatchException("올바른 생년월일을 입력해주세요.");
 
                 System.out.print("성별을 입력해 주세요.(m/f): ");
                 gender = sc.next().charAt(0);
@@ -59,14 +59,8 @@ class ResidentRegistrationNumber {
     private ResidentRegistrationNumber() {}
 
 
-
-    public static String getSSN(int year, int month, int day, char gender) {
-        String prefix = getPrefix(year, month, day, gender);
-        return prefix + getRandomSuffix(prefix);
-    }
-
     public static boolean isValidDate(int year, int month, int day) {
-        if (!(2020 <= year && year <= 2999)) return false;
+        if (!(2020 <= year)) return false;
         if (!(1 <= month && month <= 12)) return false;
         if (!(1 <= day && day <= 31)) return false;
 
@@ -87,18 +81,17 @@ class ResidentRegistrationNumber {
         return true;
     }
 
+    public static String getSSN(int year, int month, int day, char gender) {
+        String prefix = getPrefix(year, month, day, gender);
+        return prefix + getRandomSuffix(prefix);
+    }
+
     public static boolean isValidGender(char gender) {
         return (gender == 'm' || gender == 'M' || gender == 'f' || gender == 'F');
     }
 
     private static String getPrefix(int year, int month, int day, char gender) {
-        String prefix = "";
-
-        prefix += String.format("%02d", year % 100);
-        prefix += String.format("%02d", month);
-        prefix += String.format("%02d", day);
-
-        prefix += "-";
+        String prefix = String.format("%02d%02d%02d-", year % 100, month, day);;
 
         if (gender == 'm') prefix += GENDER.MALE;
         else               prefix += GENDER.FEMALE;
@@ -146,6 +139,4 @@ class ResidentRegistrationNumber {
         static final short MALE  = 3;
         static final short FEMALE = 4;
     }
-
 }
-
