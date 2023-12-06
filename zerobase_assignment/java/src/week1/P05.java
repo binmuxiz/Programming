@@ -93,7 +93,7 @@ class MyCalendar {
         }
         sb.append("\n");
 
-        for (int w = 0; w < 5; w++) {
+        for (int w = 0; w < 4; w++) {
             for (int i = 0; i < CALENDER_CNT; i++) {
                 start = lastDayOfWeek[i] + 1;
                 lastDayOfWeek[i] = start + 6;
