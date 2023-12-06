@@ -12,14 +12,14 @@ import java.util.Scanner;
 public class P05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int year = 0, month = 0;
+        int year, month;
 
         try {
             System.out.println("[달력 출력 프로그램]");
             System.out.print("달력의 년도를 입력해 주세요.(yyyy): ");
             year = sc.nextInt();
 
-            System.out.print("달력의 월을 입력해 주세요.(mm): ");
+            System.out.print("달력의 월을 입력해 주세요.(MM): ");
             month = sc.nextInt();
 
             MyCalendar.printCalendars(year, month);
@@ -40,10 +40,17 @@ class MyCalendar {
     private static final int LENGTH_OF_MONTH = 3;
 
     // 입력값 기준으로 이전달, 입력달, 현재달 출력
-    public static void printCalendars(int year, int month) {
-        StringBuilder sb = new StringBuilder();
+    public static void printCalendars(int year, int month) throws DateTimeException {
+        StringBuilder sb = new StringBuilder(450);
 
-        int[][] calendar = new int[CALENDER_CNT][4];  // before, input, now
+        int[][] calendar = setCalendar(year, month);
+        printHeader(calendar, sb);
+        printDays(calendar, sb);
+        System.out.println(sb);
+    }
+
+    private static int[][] setCalendar(int year, int month) {
+        int[][] calendar = new int[CALENDER_CNT][4];
 
         calendar[0][YEAR] = (month == 1) ? year - 1 : year;
         calendar[1][YEAR] = year;
@@ -54,25 +61,22 @@ class MyCalendar {
         calendar[2][MONTH] = LocalDate.now().getMonthValue();
 
         for (int i = 0; i < CALENDER_CNT; i++) {
-            int val = LocalDate.of(calendar[i][0], calendar[i][1], 1).getDayOfWeek().getValue();
-            calendar[i][DAY_OF_WEEK_OF_FIRST_DAY] = (val == DayOfWeek.SUNDAY.getValue()) ? 0 : val;
+            int dayOfWeek = LocalDate.of(calendar[i][0], calendar[i][1], 1).getDayOfWeek().getValue();
+            calendar[i][DAY_OF_WEEK_OF_FIRST_DAY] = (dayOfWeek == DayOfWeek.SUNDAY.getValue()) ? 0 : dayOfWeek;
 
             calendar[i][LENGTH_OF_MONTH] = YearMonth.of(calendar[i][0], calendar[i][1]).lengthOfMonth();
         }
-
-        printHeader(calendar, sb);
-        printDays(calendar, sb);
-        System.out.println(sb);
+        return calendar;
     }
 
     private static void printHeader(final int[][] calendars, StringBuilder sb) {
 
-        for (int i = 0; i < calendars.length; i++) {
+        for (int i = 0; i < CALENDER_CNT; i++) {
             sb.append(String.format("[%04d년 %02d월]\t\t\t\t\t", calendars[i][0], calendars[i][1]));
         }
         sb.append("\n");
 
-        for (int i = 0; i < calendars.length; i++) {
+        for (int i = 0; i < CALENDER_CNT; i++) {
             sb.append("일\t월\t화\t수\t목\t금\t토\t\t");
         }
         sb.append("\n");
@@ -80,7 +84,7 @@ class MyCalendar {
 
     private static void printDays(final int[][] calendar, StringBuilder sb) {
         int start = 1;
-        int[] lastDayOfWeek = new int[CALENDER_CNT];
+        int[] lastDayOfWeek = new int[CALENDER_CNT];  // 한 주의 마지막 날짜
 
         // 첫째주 출력
         for (int i = 0; i < CALENDER_CNT; i++) {
