@@ -1,5 +1,8 @@
 package polymorphism.ex6;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SoundFlyMain {
     public static void main(String[] args) {
         Dog dog = new Dog();
@@ -12,6 +15,8 @@ public class SoundFlyMain {
 
         flyAnimal(bird);
         flyAnimal(chicken);
+
+        List list = new ArrayList();
     }
 
     private static void soundAnimal(AbstractAnimal animal) {
