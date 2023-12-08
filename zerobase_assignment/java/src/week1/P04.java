@@ -104,7 +104,7 @@ class ResidentRegistrationNumber {
         Set<String> suffixSet = ssn.get(key);
 
         if (suffixSet == null) {
-            suffixSet = new LinkedHashSet<>();
+            suffixSet = new HashSet<>();
             suffix = getRandomStrNumber();
             suffixSet.add(suffix);
             ssn.put(key, suffixSet);
