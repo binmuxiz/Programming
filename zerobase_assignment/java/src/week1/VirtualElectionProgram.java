@@ -2,7 +2,7 @@ package week1;
 
 import java.util.*;
 
-public class P06 {
+public class VirtualElectionProgram {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int totalVoteNum, candidateNum;

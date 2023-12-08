@@ -1,7 +1,7 @@
 package week1;
 
 // 20기 이은빈
-public class P01 {
+public class MultiplicationTableProgram {
     public static void main(String[] args) {
         System.out.println("[구구단 출력]");
 

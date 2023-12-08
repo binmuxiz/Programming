@@ -4,7 +4,7 @@ import java.util.*;
 
 // 20기 이은빈
 // 주민등록번호 생성 프로그램
-public class P04 {
+public class ResidentRegistrationNumberCreationProgram {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int year, month, day;

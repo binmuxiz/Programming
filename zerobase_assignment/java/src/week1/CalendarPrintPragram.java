@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 // 20기 이은빈
 // 달력 출력 프로그램
-public class P05 {
+public class CalendarPrintPragram {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int year, month;

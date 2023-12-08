@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // 20기 이은빈
 // 결제 금액 캐시백 계산 프로그램
-public class P02 {
+public class CashBackProgram {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);

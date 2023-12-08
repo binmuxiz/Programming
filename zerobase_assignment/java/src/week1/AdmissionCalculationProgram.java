@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // 20기 이은빈
 // 놀이공원 입장권 계산 프로그램
-public class P03 {
+public class AdmissionCalculationProgram {
     final static int ORIGINAL_FEE = 10000;
     final static int SPECIAL_FEE = 4000;
     final static int NORMAL_FEE = 8000;
