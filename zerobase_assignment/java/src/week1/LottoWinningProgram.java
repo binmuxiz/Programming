@@ -105,7 +105,7 @@ class LottoCreation {
 
         int count = 0;
         while (count < LOTTO_LEN) {
-            int randInt = rand.nextInt(1, LOTTO_BOUND);
+            int randInt = rand.nextInt(LOTTO_BOUND);
             if (set.add(randInt)) count++;
         }
 
