@@ -14,6 +14,7 @@ public class IntermediateOperationExample1 {
         Stream<String> filterStream = Stream.of(names);
         filterStream.filter(name -> name.contains("a")).forEach(System.out::println);
 
+        System.out.println();
         Stream<String> arrayToStream = Arrays.stream(names);
         arrayToStream.filter(name -> name.contains("b")).forEach(System.out::println);
 
@@ -29,7 +30,7 @@ public class IntermediateOperationExample1 {
         String[] wordArray = {"this is", "Intermediate Operation", "java jdk1.8"};
         Stream<String> flatMapStream = Stream.of(wordArray);
         flatMapStream.flatMap(s -> Stream.of(s.split(" "))).forEach(System.out::println);
-        // * 스트림의 요소 명령문을 적용해서 새로운 스트림을 반환한다. (요소 각각이 새로운 스트림으로 만들어짐)
+        // * 스트림의 각 요소에 명령문을 적용해서 새로운 스트림을 반환한다.
 
 
         System.out.println("Sorted");

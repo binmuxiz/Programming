@@ -5,17 +5,15 @@ package lamda_and_stream;
 
 public class Practice1 {
     public static void main(String[] args) {
+        CalculateClass calculateClass = new CalculateClass();
+        calculateClass.defaultMethod();
+        CalculateInterface.method1();
+        CalculateInterface.method2();
+
         int n = 4;
         CalculateInterface<Integer> c1 = num -> num * num;
-        System.out.println(c1.calculate(n));
 
-        // 런타임 시 익명클래스 생성
-//        LambdaPractice1 lp = new LambdaPractice1() {
-//            @Override
-//            public double squareAndRoot(int num) {
-//                return num * num;
-//            }
-//        };
+        System.out.println(c1.calculate(n));
 
         double d = 4.0;
         CalculateInterface<Double> c2 = num -> Math.sqrt(num);
@@ -25,6 +23,32 @@ public class Practice1 {
     }
 }
 
+@FunctionalInterface
 interface CalculateInterface<T> {
     T calculate(T t);
+
+    static void method1() {
+        System.out.println("CalculateInterface.method1");
+    }
+
+    static void method2() {
+        System.out.println("CalculateInterface.method2");
+    }
+
+    default void defaultMethod() {
+        System.out.println("CalculateInterface.CalculateInterface");
+    }
+}
+
+class CalculateClass<T> implements CalculateInterface<T>{
+
+    @Override
+    public T calculate(T t) {
+        return t;
+    }
+
+    @Override
+    public void defaultMethod() {
+        CalculateInterface.super.defaultMethod();
+    }
 }

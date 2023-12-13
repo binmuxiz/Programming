@@ -26,7 +26,7 @@ public class TerminateOperationExample {
 
         System.out.println("== reduce ==");
         IntStream reduceStream = IntStream.of(arr);
-        Optional<Integer> reduceResult = reduceStream.sorted().boxed().reduce((num1, num2) -> num1 * num2);
+        Optional<Integer> reduceResult = reduceStream.boxed().reduce((num1, num2) -> num1 * num2);
         System.out.println(reduceResult.get());
 
         /*
@@ -56,7 +56,7 @@ public class TerminateOperationExample {
         System.out.println(findFirstStream.sorted().findFirst().getAsInt());
 
         System.out.println("== findAny ==");
-        IntStream findAnyStream = IntStream.of(arr);
+        IntStream findAnyStream = IntStream.of();
         OptionalInt findAnyResult = findAnyStream.sorted().findAny();
         System.out.println(findAnyResult.getAsInt());
 
