@@ -30,7 +30,7 @@ public class Silver4_요세푸스문제 {
 //        br.close();
 //        bw.close();
 
-        // 이게 쬐에에끔 더 빠름
+//        // 이게 쬐에에끔 더 빠름
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         StringTokenizer st = new StringTokenizer(br.readLine());
