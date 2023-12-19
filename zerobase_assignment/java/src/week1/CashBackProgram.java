@@ -20,7 +20,9 @@ public class CashBackProgram {
 
     private static int getCashbackPoint(int n) {
         int point = (int) (n * 0.1) / 100 * 100;
-        point = (point > 300) ? 300 : point;
+        if (point > 300) {
+            point = 300;
+        }
         return point;
     }
 }
