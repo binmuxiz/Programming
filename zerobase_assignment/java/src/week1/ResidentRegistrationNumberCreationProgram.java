@@ -51,7 +51,6 @@ public class ResidentRegistrationNumberCreationProgram {
 
 
 class ResidentRegistrationNumber {
-    private static final Random rand = new Random();
 
     // key : 생년월일+성별, value : randomSet
     private static final Map<String, Set<String>> ssn = new HashMap<>();
@@ -124,11 +123,7 @@ class ResidentRegistrationNumber {
     }
 
     private static String getRandomStrNumber() {
-        StringBuilder str = new StringBuilder();
-        for (int i = 0; i < 6; i++) {
-            str.append(rand.nextInt(10));
-        }
-        return str.toString();
+        return String.format("%06d", new Random().nextInt(1000000));
     }
 
     private static boolean isLeapYear(int year) {
