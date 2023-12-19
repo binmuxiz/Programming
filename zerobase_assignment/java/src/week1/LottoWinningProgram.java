@@ -101,17 +101,20 @@ class LottoCreation {
     private final static Random rand = new Random();
 
     public static int[] createRandomLotto() {
-        Set<Integer> set = new HashSet<>(LOTTO_LEN);
+        int[] result = new int[LOTTO_LEN];
 
-        int count = 0;
-        while (count < LOTTO_LEN) {
-            int randInt = rand.nextInt(LOTTO_BOUND);
-            if (set.add(randInt)) count++;
+        for (int i = 0; i < LOTTO_LEN; i++) {
+            int randInt = rand.nextInt(LOTTO_BOUND) + 1;
+            result[i] = randInt;
+
+            for (int j = 0; j < i; j++) {
+                if (result[j] == randInt) {
+                    i--;
+                    break;
+                }
+            }
         }
-
-        int[] result = set.stream().mapToInt(Integer::intValue).toArray();
         Arrays.sort(result);
-
         return result;
     }
 }
