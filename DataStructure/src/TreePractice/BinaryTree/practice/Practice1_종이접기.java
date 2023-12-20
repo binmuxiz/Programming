@@ -22,7 +22,7 @@ package TreePractice.BinaryTree.practice;
  * 왼쪽으로 0, 오른쪽으로 1을 갖는 포화이진트리 형태
  * InOrder로 출력한다.
  */
-public class Practice1 {
+public class Practice1_종이접기 {
 
     public static void main(String[] args) {
         // Test code
